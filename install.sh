@@ -1,12 +1,10 @@
 #!/bin/bash
 
-USER_HOME_DIR=$(eval echo ~"$USER")
-
 # Zsh setup
-ln -s "$(pwd)"/.zshrc "$USER_HOME_DIR"/.zshrc
+ln -s "$HOME"/dotfiles/.zshrc "$HOME"/.zshrc
 
 # Powerlevel10k setup
-ln -s "$(pwd)"/.p10k.zsh "$USER_HOME_DIR"/.p10k.zsh
+ln -s "$HOME"/dotfiles/.p10k.zsh "$HOME"/.p10k.zsh
 
 # Reload zsh to apply changes
-source "$USER_HOME_DIR"/.zshrc
+source "$HOME"/.zshrc
