@@ -4,12 +4,7 @@ This repository contains all my dotfiles and configurations for my ZSH and Ubunt
 
 ## Installation
 
-Clone the repository and run the `install.sh` script.
-
-```bash
-chmod +x install.sh
-./install.sh
-```
+This project is part of an ansible configuration which can be found [here](https://github.com/leninner/my-pc-config)
 
 ## Useful Links
 
