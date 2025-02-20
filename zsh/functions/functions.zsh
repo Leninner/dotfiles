@@ -65,3 +65,9 @@ insert_datetime() {
     BUFFER="$BUFFER$(date '+%Y-%m-%d %H:%M:%S')"
     CURSOR=$#BUFFER
 }
+
+# Function to open cursor
+cursor() {
+  nohup $HOME/Downloads/cursor-0.45.11-build-250207y6nbaw5qc-x86_64.AppImage --no-sandbox "$@" > /dev/null 2>&1 &
+  disown
+}
