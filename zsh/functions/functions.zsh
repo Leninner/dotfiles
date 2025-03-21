@@ -68,6 +68,6 @@ insert_datetime() {
 
 # Function to open cursor
 cursor() {
-  nohup $HOME/Downloads/cursor-0.45.11-build-250207y6nbaw5qc-x86_64.AppImage --no-sandbox "$@" > /dev/null 2>&1 &
+  nohup "/opt/cursor.AppImage" "$@" > /dev/null 2>&1 &
   disown
 }
