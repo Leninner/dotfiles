@@ -6,7 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git docker terraform z zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete ansible alias-finder kubectl helm aws)
+plugins=(git docker terraform z zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting ansible alias-finder kubectl helm aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,3 +49,17 @@ export PATH=$MAVEN_HOME/bin:$PATH
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# Cursor AI IDE launcher function
+function cursor() {
+    local args=""
+    if [ $# -eq 0 ]; then
+        args=$(pwd)
+    else
+        for arg in "$@"; do
+            args="$args $arg"
+        done
+    fi
+    local executable=$(find /opt/cursor/cursor.AppImage -type f)
+    (nohup $executable --no-sandbox "$args" >/dev/null 2>&1 &)
+}
