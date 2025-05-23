@@ -31,10 +31,9 @@ complete -o nospace -C /usr/bin/terraform terraform
 export PATH=$PATH:~/.local/bin
 
 # Golang
-export PATH=$PATH:/usr/local/go/bin
-
-## Golang Live Reloading with Air 
-alias air='$(go env GOPATH)/bin/air'
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Maven
 MAVEN_HOME=$HOME/maven
