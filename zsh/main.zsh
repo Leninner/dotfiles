@@ -15,9 +15,6 @@ export ZSH_CONFIG_PATH=$HOME/dotfiles/zsh
 # Load custom aliases
 source "$ZSH_CONFIG_PATH/aliases/aliases.zsh"
 
-# Load functions
-source "$ZSH_CONFIG_PATH/functions/functions.zsh"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR="$HOME/.nvm"
@@ -62,3 +59,6 @@ function cursor() {
     local executable=$(find /opt/cursor/cursor.AppImage -type f)
     (nohup $executable --no-sandbox "$args" >/dev/null 2>&1 &)
 }
+
+# Usefull predefines scripts load
+export PATH="$HOME/dotfiles/zsh/functions:$PATH"
