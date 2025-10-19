@@ -42,23 +42,12 @@ export PATH=$MAVEN_HOME/bin:$PATH
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# AWS CLI
+export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
-# Cursor AI IDE launcher function
-function cursor() {
-    local args=""
-    if [ $# -eq 0 ]; then
-        args=$(pwd)
-    else
-        for arg in "$@"; do
-            args="$args $arg"
-        done
-    fi
-    local executable=$(find /opt/cursor/cursor.AppImage -type f)
-    (nohup $executable --no-sandbox "$args" >/dev/null 2>&1 &)
-}
+# Cursor CLI
+export PATH="/Applications/Cursor.app/Contents/Resources/app/bin:$PATH"
 
 # Usefull predefines scripts load
 export PATH="$HOME/dotfiles/zsh/functions:$PATH"
